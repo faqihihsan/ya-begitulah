@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Puisi Orbit Saturnus</title>
+  <style>
+    body {
+      background: radial-gradient(circle at top, #0b0c10, #1f2833);
+      color: #c5c6c7;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding-top: 100px;
+      overflow: hidden;
+    }
+    h1 {
+      color: #66fcf1;
+      margin-bottom: 40px;
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+    .puisi {
+      font-size: 24px;
+      line-height: 1.8;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+    .puisi.show {
+      opacity: 1;
+    }
+    .highlight {
+      color: #45a29e;
+      font-weight: bold;
+    }
+    /* efek bintang */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      z-index: -1;
+      animation: twinkle 10s infinite;
+    }
+    @keyframes twinkle {
+      0% {opacity: 0.8;}
+      50% {opacity: 0.4;}
+      100% {opacity: 0.8;}
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <h1>Puisi Orbit Saturnus</h1>
+  <div id="puisi-container">
+    <p class="puisi">Kamu adalah seorang yang begitu <span class="highlight">indah</span> di mataku</p>
+    <p class="puisi">Tapi, kamu itu adalah sebuah <span class="highlight">tatanan orbit</span></p>
+    <p class="puisi">Yang akan menamparku</p>
+    <p class="puisi">Bagai batu-batu di <span class="highlight">cincin Saturnus</span></p>
+  </div>
+
+  <script>
+    const lines = document.querySelectorAll('.puisi');
+    lines.forEach((line, index) => {
+      setTimeout(() => {
+        line.classList.add('show');
+      }, index * 2500); // jeda 2.5 detik antar baris
+    });
+  </script>
+</body>
+</html>
