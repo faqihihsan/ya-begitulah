@@ -1,0 +1,2 @@
+# ya-begitulah
+jangan diliat
